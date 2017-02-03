@@ -13,26 +13,26 @@ Output<13>            pLED;
 //------------------------- LED CONTROL functions ----------------------
 
 void ledRedOn () {
-  pRedLedPin = HIGH;
+    pRedLedPin = HIGH;
 }
 void ledRedOff () {
-  pRedLedPin = LOW;
+    pRedLedPin = LOW;
 }
 void ledYellowOn () {
-  pYellowLedPin = HIGH;
+    pYellowLedPin = HIGH;
 }
 void ledYellowOff () {
-  pYellowLedPin = LOW;
+    pYellowLedPin = LOW;
 }
 void ledGreenOn () {
-  pGreenLedPin = HIGH;
+    pGreenLedPin = HIGH;
 }
 void ledGreenOff () {
-  pGreenLedPin = LOW;
+    pGreenLedPin = LOW;
 }
 void laserOn () {
-  pLaserPin = HIGH;
+    pLaserPin = HIGH;
 }
 void laserOff () {
-  pLaserPin = LOW;
+    pLaserPin = LOW;
 }

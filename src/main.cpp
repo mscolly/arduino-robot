@@ -28,57 +28,57 @@ extern void execute_tasks();
 // -------------- Main -----------------
 
 void initPins() {
-  pinMode(ECHOPIN, INPUT);
+    pinMode(ECHOPIN, INPUT);
 //  pLED = LOW;     // Turn off on-board LED used for overflow indication
 }
 
 void setup () {
 
-  initPins();
-  
-  Wire.begin();       //Initiate the Wire library and join the I2C bus as a master
-  randomSeed(analogRead(0));
-  
+    initPins();
+
+    Wire.begin();     //Initiate the Wire library and join the I2C bus as a master
+    randomSeed(analogRead(0));
+
 #ifdef _DEBUG_
-  Serial.begin(115200);
+    Serial.begin(115200);
 //  Serial.println(CToken);
 #endif
 
-  moveStop();
+    moveStop();
 
-  ledRedOn();
-  ledYellowOn();
-  ledGreenOn();
-  laserOn();
-  
+    ledRedOn();
+    ledYellowOn();
+    ledGreenOn();
+    laserOn();
+
 #ifdef _DEBUG_
 //  Serial.println("Init move functions");
 #endif
 
-  power_adc_disable();
-  power_adc_disable();
+    power_adc_disable();
+    power_adc_disable();
 
 #ifndef _DEBUG_
-  power_usart0_disable();
+    power_usart0_disable();
 #endif
 
 //  taskManager.init();
 
-  shakeSettleSeconds = 3;  // Wait for at least three seconds for the robot to be motionless
+    shakeSettleSeconds = 3; // Wait for at least three seconds for the robot to be motionless
 
-  delay(2000);
+    delay(2000);
 
-  ledRedOff();
-  ledYellowOff();
-  ledGreenOff();
-  laserOff();
+    ledRedOff();
+    ledYellowOff();
+    ledGreenOff();
+    laserOff();
 
     init_tasks();
 
-  obstacle = false;
+    obstacle = false;
 }
 
 void loop ()
 {
-  execute_tasks();
+    execute_tasks();
 }
